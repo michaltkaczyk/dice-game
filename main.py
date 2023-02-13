@@ -1,5 +1,7 @@
 import random
 
+N_ROUNDS = 10
+
 def main():
     playerOneName = input("Player One - Please enter your name: ")
     print("Hello, " + playerOneName + "\n")
@@ -11,10 +13,12 @@ def main():
     playerTwoScore = 0
     playerTwoWins = 0
 
-    rounds = 1
+    round_counter = 1
 
-    while rounds != 4:
-        print("Round " + str(rounds))
+    while round_counter <= N_ROUNDS:
+        print("Round " + str(round_counter))
+        round_counter = round_counter + 1
+
         playerOneScore = roll_dice()
         playerTwoScore = roll_dice()
         print(playerOneName + " Roll: " + str(playerOneScore))
@@ -28,8 +32,6 @@ def main():
             print(playerTwoName + " wins!\n")
         else:
             print("Draw!\n")
-
-        rounds = rounds + 1
 
     if playerOneWins > playerTwoWins:
         print(playerOneName + " wins! Rounds won: " + str(playerOneWins))
