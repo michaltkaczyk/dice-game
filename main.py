@@ -44,4 +44,5 @@ def roll_dice():
     dice = random.randint(1, 6)
     return dice
 
-main()
+if __name__ == '__main__':
+    main()
