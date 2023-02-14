@@ -4,9 +4,9 @@ N_ROUNDS = 10
 
 def main():
     playerOneName = input("Player One - Please enter your name: ")
-    print("Hello, " + playerOneName + "\n")
+    print("Hello, {}\n".format(playerOneName))
     playerTwoName = input("Player Two - Please enter your name: ")
-    print("Hello, " + playerTwoName + "\n")
+    print("Hello, {}\n".format(playerTwoName))
 
     playerOneScore = 0
     playerOneWins = 0
@@ -20,23 +20,23 @@ def main():
         round_counter = round_counter + 1
 
         playerOneScore = roll_dice()
+        print("{} rolls {}".format(playerOneName, playerOneScore))
         playerTwoScore = roll_dice()
-        print(playerOneName + " Roll: " + str(playerOneScore))
-        print(playerTwoName + " Roll: " + str(playerTwoScore))
+        print("{} rolls {}".format(playerTwoName, playerTwoScore))
 
         if playerOneScore > playerTwoScore:
             playerOneWins = playerOneWins + 1
-            print(playerOneName + " wins!\n")
+            print("{} wins!\n".format(playerOneName))
         elif playerTwoScore > playerOneScore:
             playerTwoWins = playerTwoWins + 1
-            print(playerTwoName + " wins!\n")
+            print("{} wins!\n".format(playerTwoName))
         else:
             print("Draw!\n")
 
     if playerOneWins > playerTwoWins:
-        print(playerOneName + " wins! Rounds won: " + str(playerOneWins))
+        print("{} wins! Rounds won: {}".format(playerOneName, playerOneWins))
     elif playerTwoWins > playerOneWins:
-        print(playerTwoWins + " wins! Rounds won: " + str(playerTwoWins))
+        print("{} wins! Rounds won: {}".format(playerTwoName, playerTwoWins))
     else:
         print("Draw!")    
 
